@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.header{
+    text-align: center;
+    background: #d6d6d6;
+}
+
+.new-note{
+    display: flex;
+    justify-content: center;    
+}
+
+.new-note__container{
+    width: 25vw;
+}
+
+.noteboard{
+    display: flex;
+}
+
+.noteboard__note{
+    box-shadow: #d6d6d6 0 0 10px;
+    padding: .5rem;
+    margin: 1rem;
+    width: 25vw;
+    background: #f3f02b;
+}
+
+.noteboard__pin-img{
+    margin: 0 6rem;
+    width: 3rem;
+    
+}
+
+.noteboard__note-title{
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.noteboard__note-content{
+    margin-bottom: 1rem;
+}
