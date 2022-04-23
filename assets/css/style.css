@@ -9,12 +9,39 @@
 }
 
 .new-note{
+    background: linear-gradient(#d6d6d6,#ffffff);
     display: flex;
     justify-content: center;    
 }
 
 .new-note__container{
-    width: 25vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.new-note__input-title{
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #ffff;
+    height: 2rem;
+    padding: .5rem;
+    background: #f1f0ae;
+}
+
+.new-note__input-text{
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #ffff;
+    padding: .5rem;
+    background: #f1f0ae;
+}
+
+.new-note__add-button{
+    border-radius: 3px;
+    color: #fff;
+    height: 2rem;
+    border: none;
+    background: #99986a;
 }
 
 .noteboard{
@@ -25,7 +52,7 @@
     box-shadow: #c7c6c6 0 0 10px;
     padding: .5rem;
     margin: 1rem;
-    width: 25vw;
+    width: 12vw;
     background: #f3f02b;
 }
 
@@ -44,3 +71,12 @@
     margin-bottom: 1rem;
 }
 
+@media screen and (max-width: 600px){
+    .noteboard__note{
+        width: 50vw;
+    }
+    .noteboard{
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
