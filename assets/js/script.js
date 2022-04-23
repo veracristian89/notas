@@ -4,7 +4,7 @@ const inputTitle = document.querySelector(".new-note__input-title");
 const inputText = document.querySelector(".new-note__input-text");
 const noteBoard = document.querySelector(".noteboard");
 
-function createNote(title, content){
+function createNote( {titleValue, textValue} ){
     const note = document.createElement("div");
     note.classList.add("noteboard__note");
     noteBoard.appendChild(note)
@@ -16,27 +16,37 @@ function createNote(title, content){
 
     const noteTitle = document.createElement("h2");
     note.appendChild(noteTitle)
-    noteTitle.innerHTML = (title);
+    noteTitle.innerHTML = (titleValue);
     noteTitle.classList.add("noteboard__note-title");
 
     const noteContent = document.createElement("p");
     note.appendChild(noteContent)
-    noteContent.innerHTML = (content);
+    noteContent.innerHTML = (textValue);
     noteContent.classList.add("noteboard__note-content");
 }
 
-addButton.addEventListener("click", function(event){
-    event.preventDefault();
+function readNote(){
+    const noteList = JSON.parse(localStorage.getItem("notes")) || [];
+    noteList.forEach(note => console.log(createNote(note)))
+}
+
+addButton.addEventListener("click", function(){
+    
     let titleValue = inputTitle.value;
     let textValue = inputText.value;
     const noteObj = {
         titleValue,
         textValue
-    }
-    localStorage.setItem("notes", JSON.stringify(noteObj))
-    createNote(titleValue, textValue)
-    inputTitle.value = ""
-    inputText.value = ""
-    
+    };
+
+    const noteList = JSON.parse(localStorage.getItem("notes")) || [];
+    noteList.push(noteObj);
+    localStorage.setItem("notes", JSON.stringify(noteList));
+    createNote({titleValue, textValue});
+    inputTitle.value = "";
+    inputText.value = "";    
 
 });
+
+readNote();
+

@@ -22,7 +22,7 @@
 }
 
 .noteboard__note{
-    box-shadow: #d6d6d6 0 0 10px;
+    box-shadow: #c7c6c6 0 0 10px;
     padding: .5rem;
     margin: 1rem;
     width: 25vw;
@@ -43,3 +43,4 @@
 .noteboard__note-content{
     margin-bottom: 1rem;
 }
+
