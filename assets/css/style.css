@@ -44,6 +44,10 @@
     background: #99986a;
 }
 
+.new-note__add-button:active{
+    background: #797855;
+}
+
 .noteboard{
     display: flex;
 }
@@ -82,6 +86,5 @@
     .noteboard__pin-img{
         margin: 0 5rem;
         width: 2rem;
-        
     }
 }
