@@ -79,4 +79,9 @@
         justify-content: center;
         flex-wrap: wrap;
     }
+    .noteboard__pin-img{
+        margin: 0 5rem;
+        width: 2rem;
+        
+    }
 }
