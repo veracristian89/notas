@@ -47,6 +47,10 @@
 .new-note__add-button:active{
     background: #797855;
 }
+.new-note__add-button:hover{
+    cursor: pointer;
+    background: #616040;
+}
 
 .noteboard{
     display: flex;
@@ -73,6 +77,16 @@
 
 .noteboard__note-content{
     margin-bottom: 1rem;
+}
+
+.noteboard__delete{
+    padding: .5rem;
+}
+
+.noteboard__delete:hover{
+    border-radius: 5px;
+    background: #dad74c;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 600px){

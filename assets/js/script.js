@@ -1,4 +1,5 @@
 const addButton = document.querySelector(".new-note__add-button");
+const deleteButton = document.querySelector(".noteboard__delete")
 
 const inputTitle = document.querySelector(".new-note__input-title");
 const inputText = document.querySelector(".new-note__input-text");
@@ -23,6 +24,10 @@ function createNote( {titleValue, textValue} ){
     note.appendChild(noteContent)
     noteContent.innerHTML = (textValue);
     noteContent.classList.add("noteboard__note-content");
+
+    const noteDeleteButon = document.createElement("i");
+    note.appendChild(noteDeleteButon);
+    noteDeleteButon.classList.add('fa-solid', 'fa-trash-can', 'noteboard__delete');
 }
 
 function readNote(){
