@@ -53,6 +53,19 @@
     background: #616040;
 }
 
+.new-note__delete-all{
+    border-radius: 3px;
+    color: #fff;
+    height: 2rem;
+    border: none;
+    background: #de1313;
+}
+
+.new-note__delete-all:hover{
+    cursor: pointer;
+    background: #9e1f1f;
+}
+
 .noteboard{
     display: flex;
 }

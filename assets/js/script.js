@@ -1,4 +1,5 @@
 const addButton = document.querySelector(".new-note__add-button");
+const deleteAllBtn = document.querySelector("[data-delete-all]")
 
 const inputTitle = document.querySelector(".new-note__input-title");
 const inputText = document.querySelector(".new-note__input-text");
@@ -43,8 +44,13 @@ addButton.addEventListener("click", function(){
 
 readNote();
 
+deleteAllBtn.addEventListener("click", (e) => {
+    localStorage.clear();
+    location.reload();
+})
 
 noteBoard.addEventListener("click", function(e){
     console.log(e.target.id)
+    localStorage.removeItem()
     
 });
