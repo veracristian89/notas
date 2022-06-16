@@ -103,3 +103,19 @@
         width: 2rem;
     }
 }
+
+@media screen and (min-width: 600px) and (max-width: 800px){
+    .noteboard__note{
+        width: 30vw;
+    }
+
+    .noteboard{
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .noteboard__pin-img{
+        margin: 0 5rem;
+        width: 2rem;
+    }
+}

@@ -1,53 +1,41 @@
 const addButton = document.querySelector(".new-note__add-button");
-const deleteButton = document.querySelector(".noteboard__delete")
 
 const inputTitle = document.querySelector(".new-note__input-title");
 const inputText = document.querySelector(".new-note__input-text");
 const noteBoard = document.querySelector(".noteboard");
 
-function createNote( {titleValue, textValue} ){
+function createNote( {titleValue, textValue,idValue} ){
     const note = document.createElement("div");
     note.classList.add("noteboard__note");
-    noteBoard.appendChild(note)
+    note.setAttribute("id", idValue);
 
-    const notePin = document.createElement("img");
-    notePin.classList.add("noteboard__pin-img");
-    notePin.src = "./assets/img/pin.png"
-    note.appendChild(notePin)
-
-    const noteTitle = document.createElement("h2");
-    note.appendChild(noteTitle)
-    noteTitle.innerHTML = (titleValue);
-    noteTitle.classList.add("noteboard__note-title");
-
-    const noteContent = document.createElement("p");
-    note.appendChild(noteContent)
-    noteContent.innerHTML = (textValue);
-    noteContent.classList.add("noteboard__note-content");
-
-    const noteDeleteButon = document.createElement("i");
-    note.appendChild(noteDeleteButon);
-    noteDeleteButon.classList.add('fa-solid', 'fa-trash-can', 'noteboard__delete');
+    note.innerHTML = `<img class="noteboard__pin-img" src="./assets/img/pin.png" alt="">
+    <h2 class="noteboard__note-title">${titleValue}</h2>
+    <p class="noteboard__note-content">${textValue}</p>
+    <i class="fa-solid fa-trash-can noteboard__delete" id="${idValue}" data-delete-btn></i>`
+    noteBoard.appendChild(note);
 }
 
 function readNote(){
     const noteList = JSON.parse(localStorage.getItem("notes")) || [];
-    noteList.forEach(note => console.log(createNote(note)))
+    noteList.forEach(note => createNote(note));
 }
 
 addButton.addEventListener("click", function(){
     
     let titleValue = inputTitle.value;
     let textValue = inputText.value;
+    let idValue = uuid.v4();
     const noteObj = {
         titleValue,
-        textValue
+        textValue,
+        idValue
     };
 
     const noteList = JSON.parse(localStorage.getItem("notes")) || [];
     noteList.push(noteObj);
     localStorage.setItem("notes", JSON.stringify(noteList));
-    createNote({titleValue, textValue});
+    createNote({titleValue, textValue, idValue});
     inputTitle.value = "";
     inputText.value = "";    
 
@@ -55,3 +43,8 @@ addButton.addEventListener("click", function(){
 
 readNote();
 
+
+noteBoard.addEventListener("click", function(e){
+    console.log(e.target.id)
+    
+});
