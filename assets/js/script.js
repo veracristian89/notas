@@ -32,25 +32,30 @@ addButton.addEventListener("click", function(){
         textValue,
         idValue
     };
-
-    const noteList = JSON.parse(localStorage.getItem("notes")) || [];
-    noteList.push(noteObj);
-    localStorage.setItem("notes", JSON.stringify(noteList));
-    createNote({titleValue, textValue, idValue});
-    inputTitle.value = "";
-    inputText.value = "";    
+    if(titleValue != "" && textValue!="") {
+        const noteList = JSON.parse(localStorage.getItem("notes")) || [];
+        noteList.push(noteObj);
+        localStorage.setItem("notes", JSON.stringify(noteList));
+        createNote({titleValue, textValue, idValue});
+        inputTitle.value = "";
+        inputText.value = ""; 
+    } else {
+        alert("No se puede guardar una nota vacia.")
+    }
+       
 
 });
 
 readNote();
 
 deleteAllBtn.addEventListener("click", (e) => {
+    e.preventDefault();
     localStorage.clear();
     location.reload();
 })
 
 noteBoard.addEventListener("click", function(e){
     console.log(e.target.id)
-    localStorage.removeItem()
+    localStorage.removeItem(e.target.id)
     
 });

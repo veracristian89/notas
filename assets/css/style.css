@@ -2,22 +2,34 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+body{
+    margin: 0;
+    padding: 0;
+    background: url(/assets/img/cardboard-bg.jpg);
+    background-size: cover;    
 }
 .header{
+    margin: 2rem 0;
     text-align: center;
-    background: #d6d6d6;
 }
-
+.header__title{
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: #383838 1px 1px 10px;
+}
 .new-note{
-    background: linear-gradient(#d6d6d6,#ffffff);
     display: flex;
-    justify-content: center;    
+    justify-content: center; 
 }
 
 .new-note__container{
     display: flex;
     flex-direction: column;
+    background: #f1f0ae;
+    box-shadow: #383838 1px 1px 10px;
 }
 
 .new-note__input-title{
@@ -27,6 +39,7 @@
     height: 2rem;
     padding: .5rem;
     background: #f1f0ae;
+    font-size: 1.125rem;
 }
 
 .new-note__input-text{
@@ -35,9 +48,12 @@
     border-bottom: 2px solid #ffff;
     padding: .5rem;
     background: #f1f0ae;
+    font-size: 1.125rem;
 }
 
 .new-note__add-button{
+    font-size: 1.125rem;
+
     border-radius: 3px;
     color: #fff;
     height: 2rem;
@@ -54,6 +70,8 @@
 }
 
 .new-note__delete-all{
+    margin-top: 0.5rem;
+    font-size: 1.125rem;
     border-radius: 3px;
     color: #fff;
     height: 2rem;
@@ -71,7 +89,7 @@
 }
 
 .noteboard__note{
-    box-shadow: #c7c6c6 0 0 10px;
+    box-shadow: #383838 1px 1px 10px;
     padding: .5rem;
     margin: 1rem;
     width: 12vw;
