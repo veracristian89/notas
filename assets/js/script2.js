@@ -16,15 +16,21 @@ function createNote( {titleValue, textValue,idValue} ){
 }
 
 function saveNotes() {
+    
     const titleValue = inputTitle.value;
     const textValue = inputText.value;
     const idValue = uuid.v4();
-    const noteObj = {
-        titleValue,
-        textValue,
-        idValue
+    if (titleValue == "" || textValue == ""){
+        alert("no se puede guardar una nota vacia")
+    }else{
+        const noteObj = {
+            titleValue,
+            textValue,
+            idValue
+        }
+        localStorage.setItem(idValue, JSON.stringify(noteObj))
     }
-    localStorage.setItem(idValue, JSON.stringify(noteObj))
+    
 }
 
 function saveId(){
