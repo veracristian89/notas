@@ -1,5 +1,5 @@
 const addBtn = document.querySelector("[data-add-btn]")
-const deleteAllBtn = document.querySelector("[data-delte-all]")
+const deleteAllBtn = document.querySelector("[data-delete-all]")
 const inputTitle = document.querySelector(".new-note__input-title");
 const inputText = document.querySelector(".new-note__input-text");
 const noteBoard = document.querySelector(".noteboard");
@@ -52,11 +52,20 @@ function readNote() {
     }
 }
 
+deleteAllBtn.addEventListener("click", (e) => {
+    e.preventDefault()
+    respuesta = prompt("¿Está seguro que quiere borrar todas las notas? ingrese si o no")
+    if (respuesta.toLowerCase() == "si"){
+        localStorage.clear();
+        location.reload()
+    }
+});
+
 addBtn.addEventListener("click", ()=>{
     saveNotes();
     saveId();
     location.reload();
-})
+});
 
 noteBoard.addEventListener("click", function(e){
     
