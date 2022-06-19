@@ -1,36 +1,47 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <script src="https://kit.fontawesome.com/f2fcc4e02c.js" crossorigin="anonymous"></script>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="assets/css/style.css">
-    </head>
-    <body>
-        <header class="header">
-            <h1 class="header__title">Notas</h1>
-        </header>
 
-        <section class="new-note">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/f2fcc4e02c.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
 
-            <div class="new-note__container">
-                <input class="new-note__input-title" type="text" placeholder="Título de la nota">
-                <textarea class="new-note__input-text" name="" id="" cols="30" rows="10" placeholder="Contenido de la nota"></textarea>
-                <button class="new-note__add-button" data-add-btn>Agregar</button>
-                <button class="new-note__delete-all" data-delete-all>Borrar todas las notas</button>
-            </div>
-            
-        </section>
+<body>
+    <header class="header">
+        <h1 class="header__title">Notas</h1>
+    </header>
 
-        <section class="noteboard">
-           
-        </section>
-    </body>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js" integrity="sha512-UNM1njAgOFUa74Z0bADwAq8gbTcqZC8Ej4xPSzpnh0l6KMevwvkBvbldF9uR++qKeJ+MOZHRjV1HZjoRvjDfNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="./assets/js/script2.js"></script>
+    <section class="new-note">
+
+        <div class="new-note__container">
+            <input class="new-note__input-title" type="text" placeholder="Título de la nota">
+            <textarea class="new-note__input-text" name="" id="" cols="30" rows="10"
+                placeholder="Contenido de la nota"></textarea>
+            <button class="new-note__add-button" data-add-btn>Agregar</button>
+            <button class="new-note__delete-all" data-delete-all>Borrar todas las notas</button>
+        </div>
+
+    </section>
+
+    <section class="noteboard">
+        <div class="noteboard__note">
+            <img class="noteboard__pin-img" src="./assets/img/pin.png" alt="">
+            <h2 class="noteboard__note-title">nota de prueba</h2>
+            <p class="noteboard__note-content">nota de prueba 2</p>
+            <i class="fa-solid fa-trash-can noteboard__delete" id="${idValue}" data-delete-btn></i>
+        </div>
+    </section>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js"
+    integrity="sha512-UNM1njAgOFUa74Z0bADwAq8gbTcqZC8Ej4xPSzpnh0l6KMevwvkBvbldF9uR++qKeJ+MOZHRjV1HZjoRvjDfNQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="./assets/js/script2.js"></script>
+
 </html>
