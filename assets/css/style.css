@@ -103,7 +103,7 @@ body{
 
 .noteboard__pin-img{
     margin: 0 auto;
-    width: 3rem;
+    width: 2.75rem;
 }
 
 .noteboard__note-title{
@@ -146,6 +146,10 @@ body{
         font-size: 1.125rem;
         border-radius: 3px;
         height: 2rem;
+    }
+    .noteboard__pin-img{
+        margin: 0 auto;
+        width: 2.5rem;
     }
 
 }
