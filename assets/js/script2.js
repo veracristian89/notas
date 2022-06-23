@@ -21,14 +21,14 @@ function saveNotes() {
     const textValue = inputText.value;
     const idValue = uuid.v4();
     if (titleValue == "" || textValue == ""){
-        alert("no se puede guardar una nota vacia")
+        alert("no se puede guardar una nota vacia");
     }else{
         const noteObj = {
             titleValue,
             textValue,
             idValue
         }
-        localStorage.setItem(idValue, JSON.stringify(noteObj))
+        localStorage.setItem(idValue, JSON.stringify(noteObj));
     }
     
 }
@@ -40,14 +40,14 @@ function saveId(){
         idArray.push(localStorage.key(index));
         }
     }
-    localStorage.setItem("idArray",JSON.stringify(idArray))
+    localStorage.setItem("idArray",JSON.stringify(idArray));
     return idArray;
 }
 
 function readNote() {
     if (localStorage.length > 0){
         JSON.parse(localStorage.getItem("idArray")).forEach(id => {
-            createNote(JSON.parse(localStorage.getItem(id)))
+            createNote(JSON.parse(localStorage.getItem(id)));
         });
     }
 }
@@ -57,7 +57,7 @@ deleteAllBtn.addEventListener("click", (e) => {
     respuesta = prompt("¿Está seguro que quiere borrar todas las notas? ingrese si o no")
     if (respuesta.toLowerCase() == "si"){
         localStorage.clear();
-        location.reload()
+        location.reload();
     }
 });
 
@@ -71,8 +71,10 @@ noteBoard.addEventListener("click", function(e){
     
     localStorage.removeItem(e.target.id);
     saveId();
-    location.reload()
+    if(e.target.id != ""){
+        location.reload();
+    }
     
 });
 
-readNote()
+readNote();
