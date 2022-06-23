@@ -92,6 +92,7 @@ body{
 
 .noteboard__note{
     display: flex;
+    justify-content: space-between;
     flex-direction: column;
     text-align: center;
     box-shadow: #383838 1px 1px 10px;
@@ -117,6 +118,8 @@ body{
 
 .noteboard__delete{
     padding: .5rem;
+    margin: 0 auto;
+    width: 2rem;
 }
 
 .noteboard__delete:hover{
