@@ -3,7 +3,40 @@ const deleteAllBtn = document.querySelector("[data-delete-all]")
 const inputTitle = document.querySelector(".new-note__input-title");
 const inputText = document.querySelector(".new-note__input-text");
 const noteBoard = document.querySelector(".noteboard");
+const redBtn = document.querySelector("[data-btn-rojo]");
+const greenBtn = document.querySelector("[data-btn-verde]");
+const blueBtn = document.querySelector("[data-btn-azul]");
 
+redBtn.addEventListener("click", (e)=>{
+    e.preventDefault();
+    addBtn.classList.remove("btn-green");
+    addBtn.classList.remove("btn-blue");
+    if(addBtn.classList.contains("btn-red")){
+        addBtn.classList.remove("btn-red")
+    } else {
+        addBtn.classList.add("btn-red");
+    }
+});
+greenBtn.addEventListener("click", (e)=>{
+    e.preventDefault();
+    addBtn.classList.remove("btn-red");
+    addBtn.classList.remove("btn-blue");
+    if(addBtn.classList.contains("btn-green")){
+        addBtn.classList.remove("btn-green")
+    } else {
+        addBtn.classList.add("btn-green");
+    }
+});
+blueBtn.addEventListener("click", (e)=>{
+    e.preventDefault();
+    addBtn.classList.remove("btn-red");
+    addBtn.classList.remove("btn-green");
+    if(addBtn.classList.contains("btn-blue")){
+        addBtn.classList.remove("btn-blue")
+    } else {
+        addBtn.classList.add("btn-blue");
+    }
+});
 function createNote( {titleValue, textValue,idValue} ){
     const note = document.createElement("div");
     note.classList.add("noteboard__note");

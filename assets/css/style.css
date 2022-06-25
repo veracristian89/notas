@@ -4,6 +4,12 @@
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
+button{
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
 body{
     margin: 0;
     padding: 0;
@@ -23,6 +29,24 @@ body{
 .new-note{
     display: flex;
     justify-content: center; 
+}
+
+.new-note__add-button{
+    font-size: 1.125rem;
+
+    border-radius: 3px;
+    color: #fff;
+    height: 2rem;
+    border: none;
+    background: #99986a;
+}
+
+.new-note__add-button:active{
+    background: #797855;
+}
+.new-note__add-button:hover{
+    cursor: pointer;
+    background: #616040;
 }
 
 .new-note__container{
@@ -51,22 +75,35 @@ body{
     font-size: 1.125rem;
 }
 
-.new-note__add-button{
-    font-size: 1.125rem;
+.new-note__color-btns-container{
+    display: flex;
+    justify-content: space-around;
+    padding: .25rem 0;
+}
 
-    border-radius: 3px;
+.new-note__color-btn{
     color: #fff;
-    height: 2rem;
-    border: none;
-    background: #99986a;
+    border-radius: 1rem;
+    width: 3rem;
+    padding: 0.125rem;
+    border: 1px solid black;
 }
-
-.new-note__add-button:active{
-    background: #797855;
-}
-.new-note__add-button:hover{
+.new-note__color-btn:hover{
     cursor: pointer;
-    background: #616040;
+    background: #585858;
+}
+.new-note__color-btn:active{
+    background: #353535;
+
+}
+.btn-red{
+    background: red;
+}
+.btn-green{
+    background: green;
+}
+.btn-blue{
+    background-color: blue;
 }
 
 .new-note__delete-all{
