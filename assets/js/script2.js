@@ -13,8 +13,10 @@ redBtn.addEventListener("click", (e)=>{
     addBtn.classList.remove("btn-blue");
     if(addBtn.classList.contains("btn-red")){
         addBtn.classList.remove("btn-red")
+        addBtn.removeAttribute("id");
     } else {
         addBtn.classList.add("btn-red");
+        addBtn.setAttribute("id", "note-red");
     }
 });
 greenBtn.addEventListener("click", (e)=>{
@@ -23,8 +25,10 @@ greenBtn.addEventListener("click", (e)=>{
     addBtn.classList.remove("btn-blue");
     if(addBtn.classList.contains("btn-green")){
         addBtn.classList.remove("btn-green")
+        addBtn.removeAttribute("id");
     } else {
         addBtn.classList.add("btn-green");
+        addBtn.setAttribute("id", "note-green");
     }
 });
 blueBtn.addEventListener("click", (e)=>{
@@ -33,13 +37,18 @@ blueBtn.addEventListener("click", (e)=>{
     addBtn.classList.remove("btn-green");
     if(addBtn.classList.contains("btn-blue")){
         addBtn.classList.remove("btn-blue")
+        addBtn.removeAttribute("id");
     } else {
         addBtn.classList.add("btn-blue");
+        addBtn.setAttribute("id", "note-blue");
     }
 });
-function createNote( {titleValue, textValue,idValue} ){
+
+
+function createNote( {titleValue, textValue, noteColor, idValue} ){
     const note = document.createElement("div");
     note.classList.add("noteboard__note");
+    note.classList.add(noteColor);
 
     note.innerHTML = `<img class="noteboard__pin-img" src="./assets/img/pin.png" alt="">
     <h2 class="noteboard__note-title">${titleValue}</h2>
@@ -52,6 +61,7 @@ function saveNotes() {
     
     const titleValue = inputTitle.value;
     const textValue = inputText.value;
+    const noteColor = addBtn.attributes.id == undefined? addBtn.attributes.id = "none" : addBtn.attributes.id.value
     const idValue = uuid.v4();
     if (titleValue == "" || textValue == ""){
         alert("no se puede guardar una nota vacia");
@@ -59,6 +69,7 @@ function saveNotes() {
         const noteObj = {
             titleValue,
             textValue,
+            noteColor,
             idValue
         }
         localStorage.setItem(idValue, JSON.stringify(noteObj));

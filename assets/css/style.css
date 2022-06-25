@@ -139,6 +139,21 @@ body{
     background: #f3f02b;
 }
 
+.note-red{
+    color: #fff;
+    background: rgb(247, 62, 62);
+}
+
+.note-green{
+    color: #fff;
+    background: rgb(33, 138, 33);
+}
+
+.note-blue{
+    color: #fff;
+    background: rgb(62, 90, 253);
+}
+
 .noteboard__pin-img{
     margin: 0 auto;
     width: 2.75rem;
