@@ -12,7 +12,7 @@ body{
     justify-content: space-between;
     font-family: roboto, sans-serif;
     background: url(/assets/img/cardboard-bg.jpg);
-    background-repeat: no-repeat;
+    background-repeat: repeat;
 }
 .header{
     margin: .75rem 0;
