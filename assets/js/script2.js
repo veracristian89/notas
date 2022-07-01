@@ -108,7 +108,9 @@ deleteAllBtn.addEventListener("click", (e) => {
 addBtn.addEventListener("click", ()=>{
     saveNotes();
     saveId();
-    location.reload();
+    setTimeout(() => {
+        location.reload();
+    }, 100);
 });
 
 noteBoard.addEventListener("click", function(e){
